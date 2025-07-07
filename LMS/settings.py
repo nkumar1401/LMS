@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'LMS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'library1',
         'USER': 'root',
         'PASSWORD': 'root',
@@ -129,9 +129,14 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-REST_FRAMEWORK ={
+# REST_FRAMEWORK ={
+#     "DEFAULT_AUTHENTICATION_CLASSES":(
+#         'rest_framework_simplejwt.authentication.JWTAuthentication'
+#     )
+# }
+REST_FRAMEWORK= {
     "DEFAULT_AUTHENTICATION_CLASSES":(
-        'restframework_simplejwt.authentication.JWTAuthentication'
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
 
