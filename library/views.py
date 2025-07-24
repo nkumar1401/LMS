@@ -7,7 +7,15 @@ from .models import *
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework import viewsets
+from .permissions import Islibrarian
 # Create your views here.
+
+
+class BookListView(viewsets.ModelViewSet):
+    queryset=Book.objects.all()
+    serializer_class=BookSerializer
+    permission_classes=[AllowAny]
 
 
 
